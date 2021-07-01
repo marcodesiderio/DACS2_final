@@ -21,8 +21,8 @@ class laminate:
         self.A = self.ABD[:3, :3]
         self.B = self.ABD[:3, 3:]
         self.D = self.ABD[3:, 3:]
-        self.a = np.linalg.inv(self.A)
-        self.d = np.linalg.inv(self.D)
+        self.a = np.linalg.inv(self.ABD)[:3, :3]
+        self.d = np.linalg.inv(self.ABD)[3:, 3:]
         # self.vxy = - self.a[0, 1] / self.a[0, 0]
         # self.vyx = - self.a[0, 1] / self.a[1, 1]
         self.ELm, self.ETm, self.GLTm, self.vLTm, self.vTLm, self.ELb, self.ETb, self.GLTb, self.vLTb, self.vTLb = self.get_elastic_props()
