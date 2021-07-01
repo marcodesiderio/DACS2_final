@@ -5,7 +5,7 @@ import seaborn as sns
 import laminate_class
 import impactor as imp
 from matplotlib import cm
-sns.set()
+# sns.set()
 
 delta_x = 0.0025 #mm
 
@@ -90,7 +90,8 @@ if plot_shear:
     ax1.set_xlabel(r'$r$, [mm]')
     ax1.set_ylabel(r'$\frac{z}{h}$, [-]')
     ax1.set_zlabel(r'$\tau$, [MPa]')
-    ax1.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
+    ax1.grid(b=True, which='minor', color='#999999', linestyle='--', alpha=0.2)
+    ax1.grid(b=True, which='major', color='#999999', linestyle='-', alpha=0.2)
     plt.show()
 
 ###############################################################################################################

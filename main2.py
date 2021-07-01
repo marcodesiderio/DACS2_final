@@ -6,7 +6,7 @@ import seaborn as sns
 import laminate_class
 import impactor as imp
 from matplotlib import cm
-sns.set()
+# sns.set()
 
 plot_delam = True
 plot_knockdown = True
