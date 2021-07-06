@@ -6,7 +6,7 @@ class laminate:
     __slots__ = ['A', 'B', 'D', 'ABD', 'tply', 'a', 'd', 'stack', 'h', 'vxy', 'vyx',
                  'ELm', 'ETm', 'GLTm', 'vLTm', 'vTLm', 'ELb', 'ETb', 'GLTb', 'vLTb', 'vTLb']
 
-    def __init__(self, stack_init):
+    def __init__(self, stack_init, r = 1):
         self.stack = stack_init
         self.tply = p.t_ply
 
@@ -14,7 +14,7 @@ class laminate:
         i = 1
         for lamina in self.stack:
             angle = np.deg2rad(lamina)
-            lamina_props = f.lamina(p.Qxx, p.Qyy, p.Qxy, p.Gxy, angle)
+            lamina_props = f.lamina(p.Qxx * r, p.Qyy * r, p.Qxy * r, p.Gxy * r, angle)
             laminas[i] = lamina_props
             i += 1
         self.ABD, self.h = f.get_ABD(self.tply, laminas)
